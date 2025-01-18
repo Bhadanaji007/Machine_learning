@@ -1,46 +1,30 @@
-# Indian House Price Prediction
+# Fake News Detection Project
 
-This project aims to predict house prices in India using machine learning, specifically the CatBoostRegressor model. The dataset used contains various features of houses, including area, number of bedrooms, bathrooms, location, and amenities.
+This project aims to detect fake news using machine learning techniques. It utilizes a dataset of news articles and employs a Logistic Regression model to classify news as either fake or real.
 
-## Project Structure
+## Dataset
 
-- `house_cleaned.csv`: The dataset containing house information.
-- `notebook.ipynb`: The Jupyter Notebook containing the data cleaning, analysis, and model building steps.
-- `README.md`: This file.
+The dataset used in this project is the "fake_or_real_news.csv" file. It contains news articles labeled as either "FAKE" or "REAL".
 
-## Steps Involved
+## Methodology
 
-1. **Data Cleaning:**
-   - Handling missing values in columns like `floorNum`, `facing`, `nearbyLocations`, `furnishDetails`, `features`, and `rating`.
-   - Removing irrelevant columns like `price_per_sqft`, `property_name`, `property_type`, `areaWithType`, `description`, and `address`.
-
-2. **Data Analysis:**
-   - Exploring the distribution of the target variable (price).
-   - Analyzing quantitative features using box plots and scatter plots.
-   - Identifying and handling outliers using the IQR method.
-   - Analyzing categorical features using value counts and box plots.
-
-3. **Feature Engineering:**
-   - Transforming the `society` column into two categories: `independent` and `not independent`.
-   - Grouping infrequent values in the `agePossession` column.
-
-4. **Modeling:**
-   - Splitting the data into training, validation, and testing sets.
-   - Scaling numerical features using MinMaxScaler.
-   - Training a CatBoostRegressor model with optimized hyperparameters.
-   - Evaluating the model using MAE and R^2 metrics.
-
-## Results
-
-- The optimized CatBoostRegressor model achieved a high R^2 score on both the training and test sets, indicating good predictive performance.
-- The MAE metric provides insight into the average prediction error in the same units as the target variable (price).
+1. **Data Preprocessing:** The dataset is cleaned and preprocessed by removing irrelevant characters, converting text to lowercase, removing stop words, and applying stemming.
+2. **Feature Extraction:** TF-IDF (Term Frequency-Inverse Document Frequency) is used to extract features from the text data.
+3. **Model Training:** A Logistic Regression model is trained on the preprocessed data.
+4. **Model Evaluation:** The model's performance is evaluated using accuracy score on both training and testing data.
 
 ## Usage
 
-1. Clone this repository.
-2. Install the required libraries:
-3. 3. Run the `notebook.ipynb` file in Google Colab or a Jupyter Notebook environment.
+1. **Install Dependencies:** Make sure you have the necessary libraries installed. You can install them using `pip install -r requirements.txt`.
+2. **Run the Notebook:** Open the "fake_news_detection.ipynb" notebook in Google Colab and run the cells to execute the code.
+3. **Input Data:** You can input new news articles to the model for prediction.
+
+## Results
+
+The model achieved an accuracy of approximately 92% on the training data and 91% on the testing data.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
+Contributions to this project are welcome. Please feel free to submit pull requests or open issues.
+
+
